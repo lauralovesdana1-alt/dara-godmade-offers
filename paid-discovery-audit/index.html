@@ -276,7 +276,7 @@
     .field { margin-bottom: 18px; }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
     .field label { display: block; margin-bottom: 7px; font-weight: 700; font-size: .82rem; }
-    .field input, .field textarea {
+    .field input, .field textarea, .field select {
       width: 100%;
       padding: 13px 14px;
       border: 1px solid var(--line);
@@ -287,7 +287,7 @@
       font-size: .95rem;
     }
     .field textarea { min-height: 120px; resize: vertical; }
-    .field input:focus, .field textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+    .field input:focus, .field textarea:focus, .field select:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
     .form-card .button { width: 100%; margin-top: 6px; }
     .form-note { margin: 14px 0 0; text-align: center; color: var(--ink-soft); font-size: .78rem; }
     .booking-done { text-align: left; }
@@ -525,7 +525,7 @@
         </div>
         <div class="booking-grid">
           <ol class="booking-steps">
-            <li><h3>You reserve</h3><p>Two minutes, four fields. Nothing to pay today.</p></li>
+            <li><h3>You reserve</h3><p>Two minutes, five fields. Nothing to pay today.</p></li>
             <li><h3>Dara invoices you</h3><p>A $3,500 invoice lands in your inbox, payable by bank wire.</p></li>
             <li><h3>The week gets scheduled</h3><p>Once the wire clears, kickoff goes on the calendar and the audit begins.</p></li>
             <li><h3>Day 7: you get the roadmap</h3><p>Opportunity map, scoped proposal, 90-day plan &mdash; yours whatever you decide next.</p></li>
@@ -551,6 +551,18 @@
               <div class="field">
                 <label for="f-problem">What should the audit look at?</label>
                 <textarea id="f-problem" name="problem" required placeholder="e.g. Our onboarding takes 3 weeks of manual follow-up across email and spreadsheets. Client intake data gets re-typed into three systems."></textarea>
+              </div>
+              <div class="field">
+                <label for="f-source">How did you hear about me?</label>
+                <select id="f-source" name="source">
+                  <option value="">Select one…</option>
+                  <option>YouTube</option>
+                  <option>TikTok</option>
+                  <option>Instagram</option>
+                  <option>Referral / word of mouth</option>
+                  <option>Google search</option>
+                  <option>Other</option>
+                </select>
               </div>
               <button class="button" type="submit">Reserve your audit &mdash; $3,500
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -608,6 +620,7 @@
           email: document.getElementById("f-email").value.trim(),
           company: document.getElementById("f-company").value.trim(),
           problem: document.getElementById("f-problem").value.trim(),
+          source: document.getElementById("f-source").value,
           createdAt: new Date().toISOString()
         };
 
@@ -630,6 +643,7 @@
                 email: data.email,
                 company: data.company,
                 problem: data.problem,
+                source: data.source,
                 createdAt: data.createdAt
               })
             }).catch(function () {});
