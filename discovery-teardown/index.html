@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <title>Pricing — Dara Godmade</title>
+  <meta name="description" content="Three fixed ways to work with Dara Godmade: the $97 Automation Teardown, the $3,500 Discovery Audit, and the $11,000/month custom build engagement." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --ink: #102927;
+      --ink-soft: #455b57;
+      --paper: #f4f1e9;
+      --surface: #fffdf8;
+      --line: #c9c3b8;
+      --accent: #e65d36;
+      --accent-deep: #bb3c20;
+      --mint: #bde0d6;
+      --dark: #102927;
+      --on-dark: #f8f3e8;
+      --shadow: 0 18px 50px rgba(16, 41, 39, .12);
+      --radius-lg: 28px;
+      --radius-md: 16px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #f2eee4;
+        --ink-soft: #b7c4bf;
+        --paper: #081614;
+        --surface: #102724;
+        --line: #36504b;
+        --accent: #ff7650;
+        --accent-deep: #ff8c6b;
+        --mint: #39756b;
+        --dark: #07110f;
+        --on-dark: #f8f3e8;
+        --shadow: 0 18px 50px rgba(0, 0, 0, .28);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-width: 320px; background: var(--paper); color: var(--ink);
+      font-family: Manrope, system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 56px 24px 72px; }
+    .eyebrow {
+      font-family: "DM Mono", monospace; font-size: 12px; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent-deep); margin: 0 0 16px;
+    }
+    h1 {
+      font-family: Newsreader, Georgia, serif; font-weight: 600;
+      font-size: clamp(34px, 5vw, 54px); line-height: 1.05; margin: 0 0 14px;
+      letter-spacing: -0.01em;
+    }
+    .lede { font-size: 18px; color: var(--ink-soft); max-width: 640px; margin: 0 0 40px; line-height: 1.55; }
+    .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 860px) { .tiers { grid-template-columns: 1fr; } }
+    .tier {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      padding: 30px 26px; display: flex; flex-direction: column; position: relative;
+      box-shadow: var(--shadow);
+    }
+    .tier.featured { border: 2px solid var(--accent); transform: translateY(-8px); }
+    .flag {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--accent); color: #fff; font-family: "DM Mono", monospace;
+      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 999px; white-space: nowrap;
+    }
+    .tier-name {
+      font-family: "DM Mono", monospace; font-size: 12px; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--ink-soft); margin: 0 0 10px;
+    }
+    .price { font-family: Newsreader, Georgia, serif; font-size: 44px; font-weight: 600; margin: 0; line-height: 1; }
+    .price small { font-family: Manrope, sans-serif; font-size: 15px; font-weight: 500; color: var(--ink-soft); }
+    .tagline { font-size: 15px; font-weight: 600; margin: 14px 0 4px; }
+    .tier ul { list-style: none; margin: 14px 0 24px; padding: 0; flex: 1; }
+    .tier li { font-size: 14.5px; line-height: 1.5; padding: 8px 0 8px 26px; position: relative; color: var(--ink-soft); border-top: 1px solid var(--line); }
+    .tier li:first-child { border-top: none; }
+    .tier li::before { content: "✓"; position: absolute; left: 4px; color: var(--accent-deep); font-weight: 700; }
+    .cta {
+      display: block; text-align: center; text-decoration: none; font-weight: 700; font-size: 15px;
+      padding: 14px 18px; border-radius: 12px; border: 2px solid var(--accent);
+      color: var(--accent-deep); background: transparent;
+    }
+    .tier.featured .cta { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .note {
+      margin-top: 36px; background: var(--dark); color: var(--on-dark);
+      border-radius: var(--radius-md); padding: 26px 30px; font-size: 15px; line-height: 1.6;
+    }
+    .note strong { color: var(--mint); }
+    .foot { margin-top: 28px; font-size: 14px; color: var(--ink-soft); text-align: center; }
+    .foot a { color: var(--accent-deep); font-weight: 700; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">Dara Godmade — Custom Software &amp; Automation</p>
+    <h1>Three fixed ways to work together.</h1>
+    <p class="lede">No custom quotes, no hourly meters, no negotiation theater. Pick the tier that matches where you are — every price below is the price.</p>
+
+    <div class="tiers">
+      <div class="tier">
+        <p class="tier-name">Starter</p>
+        <p class="price">$97</p>
+        <p class="tagline">Automation Teardown</p>
+        <ul>
+          <li>15-minute clarity call on one workflow</li>
+          <li>One-page teardown: what's broken, what automation fixes, what it's worth</li>
+          <li>Delivered within two business days</li>
+          <li>Find out if it's worth $3,500 — before you spend it</li>
+        </ul>
+        <a class="cta" href="mailto:Dara.godmade@gmx.com?subject=Automation%20Teardown%20—%20$97">Start with the teardown</a>
+      </div>
+
+      <div class="tier featured">
+        <span class="flag">Most popular</span>
+        <p class="tier-name">Growth</p>
+        <p class="price">$3,500 <small>fixed</small></p>
+        <p class="tagline">Paid Discovery Audit</p>
+        <ul>
+          <li>One-week audit of your operation's workflows</li>
+          <li>Workflow map: how work actually moves today</li>
+          <li>Automation opportunities ranked by ROI</li>
+          <li>Scoped build proposal + 90-day roadmap</li>
+          <li>Rolls straight into a build if it's a fit</li>
+        </ul>
+        <a class="cta" href="mailto:Dara.godmade@gmx.com?subject=Discovery%20Audit%20—%20$3,500">Book the audit</a>
+      </div>
+
+      <div class="tier">
+        <p class="tier-name">Scale</p>
+        <p class="price">$11,000<small>/mo</small></p>
+        <p class="tagline">Custom Build Engagement</p>
+        <ul>
+          <li>Dedicated build capacity, month to month</li>
+          <li>Custom software, web platforms, APIs, automation</li>
+          <li>Priced on the outcome — no hourly meter running</li>
+          <li>Recent proof: $55K Amazon build · $30K Apple build</li>
+        </ul>
+        <a class="cta" href="mailto:Dara.godmade@gmx.com?subject=Custom%20Build%20—%20$11K%20per%20month">Scope the build</a>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>The one rule:</strong> prices are fixed. If the budget is tight, we cut <em>scope</em> — fewer systems, longer timeline — never the rate. A discount on the first call would teach you every future number was negotiable, and neither of us wants that.
+    </div>
+
+    <p class="foot">Questions? <a href="mailto:Dara.godmade@gmx.com">Dara.godmade@gmx.com</a></p>
+  </div>
+</body>
+</html>
